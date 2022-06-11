@@ -2,7 +2,9 @@ import React from "react";
 import Accordion from "./Accordion";
 
 const Results = ({ data }) => {
-	if (typeof data === "object" && !Array.isArray(data)) {
+	if (data === "Hero Not Found") {
+		return <p className="lead text-center py-4">{data}. Try Different Keywords.</p>;
+	} else if (typeof data === "object" && !Array.isArray(data)) {
 		return (
 			<Accordion
 				id={data.id}

@@ -16,7 +16,11 @@ export default class Character {
 	async getInfo() {
 		try {
 			const results = await axios.get(this._getUrl());
-			if (this._category === "heroes" || this._category === "villains") {
+			if (
+				this._category === "heroes" ||
+				this._category === "villains" ||
+				results.data == "Hero Not Found"
+			) {
 				return {
 					data: results.data,
 					category: this._category,

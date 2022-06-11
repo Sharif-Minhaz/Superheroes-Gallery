@@ -47,7 +47,7 @@ class App extends Component {
 		return (
 			<>
 				<Navbar handleSubmit={this.handleSubmit} handleSearch={this.handleSearch} />
-				<div className="container-fluid" style={{marginTop: "75px"}}>
+				<div className="container-fluid" style={{marginTop: "83px"}}>
 					<div className="row">
 						{this.state.isLoading ? (
 							<Loading />
