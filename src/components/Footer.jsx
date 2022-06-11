@@ -2,10 +2,17 @@ import React from "react";
 
 const Footer = (props) => {
 	return (
-		<footer>
-			<div className="text-center p-3 bg-secondary">
+		<footer className="mt-auto">
+			<div className="text-center p-3 bg-secondary text-white">
 				© 2022 Copyright:
-				<a className="text-white" href="https://github.com/Sharif-Minhaz"> Sharif Md. Minhaz</a>
+				<a
+					className="text-decoration-none"
+					style={{ color: "#e3e6ff" }}
+					href="https://github.com/Sharif-Minhaz"
+				>
+					{" "}
+					Sharif Md. Minhaz
+				</a>
 			</div>
 		</footer>
 	);

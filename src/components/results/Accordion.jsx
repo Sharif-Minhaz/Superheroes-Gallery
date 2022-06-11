@@ -3,7 +3,14 @@ import React from "react";
 
 const Accordion = ({ id, name, titleImg, image }) => {
 	return (
-		<div className="col-md-7 col-12 m-auto mb-3 accordion" id={"accordionExample" + id}>
+		<div
+			className="col-md-7 col-12 m-auto mb-3 accordion"
+			id={"accordionExample" + id}
+			// style={{
+			// 	boxShadow:
+			// 		"rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
+			// }}
+		>
 			<div className="accordion-item">
 				<h2 className="accordion-header" id={"headingOne" + id}>
 					<button

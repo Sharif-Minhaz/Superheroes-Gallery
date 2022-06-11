@@ -11,7 +11,7 @@ const Navbar = ({ handleSubmit, handleSearch }) => {
 		>
 			<div className="container-fluid col-md-7 col-12">
 				<a className="navbar-brand" href="#">
-					Navbar
+					<img src="/images/brand.png" height={40} alt="logo" />
 				</a>
 				<button
 					className="navbar-toggler"
