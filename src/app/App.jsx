@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import "./App.css";
 import Navbar from "../components/navbar/Navbar";
 import Character, { charCategory } from "./../characters";
 import Loading from "../components/Loading";
-import Results from '../components/results/Results';
+import Results from "../components/results/Results";
 import Footer from "../components/Footer";
 
-const characters = new Character(charCategory.heros);
+const characters = new Character(charCategory.heroes);
 
 class App extends Component {
 	state = {
@@ -43,11 +44,25 @@ class App extends Component {
 			.catch((err) => this.errorHandler(err));
 	};
 
+	handleCategory = (category) => {
+		characters
+			.changeCategory(category)
+			.then((data) => {
+				this.setState({ results: data, isLoading: false });
+			})
+			.catch((err) => this.errorHandler(err));
+	};
+
 	render() {
+		console.log(this.state.results.data);
 		return (
 			<>
-				<Navbar handleSubmit={this.handleSubmit} handleSearch={this.handleSearch} />
-				<div className="container-fluid" style={{marginTop: "83px"}}>
+				<Navbar
+					handleSubmit={this.handleSubmit}
+					handleSearch={this.handleSearch}
+					handleCategory={this.handleCategory}
+				/>
+				<div className="container-fluid" style={{ marginTop: "19px" }}>
 					<div className="row">
 						{this.state.isLoading ? (
 							<Loading />

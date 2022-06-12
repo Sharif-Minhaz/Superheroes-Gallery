@@ -1,7 +1,7 @@
 import axios from "../utils/axios";
 
 export const charCategory = {
-	heros: "heroes",
+	heroes: "heroes",
 	villains: "villains",
 	hero: "hero",
 	villain: "villain",
@@ -19,7 +19,7 @@ export default class Character {
 			if (
 				this._category === "heroes" ||
 				this._category === "villains" ||
-				results.data == "Hero Not Found"
+				results.data === "Hero Not Found"
 			) {
 				return {
 					data: results.data,
@@ -46,6 +46,11 @@ export default class Character {
 		}
 		return baseUrl + `${this._category}`;
 	}
+
+	changeCategory(category) {
+		this._category = category;
+		return this.getInfo();
+	} 
 
 	search = (term) => {
 		this._searchTerm = term;

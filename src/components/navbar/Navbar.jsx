@@ -1,16 +1,11 @@
-import classes from "./navbar.module.css";
 import React from "react";
 import SearchBox from "./SearchBox";
 
-const Navbar = ({ handleSubmit, handleSearch }) => {
+const Navbar = ({ handleSubmit, handleSearch, handleCategory }) => {
 	return (
-		<nav
-			className={
-				"navbar navbar-expand-lg navbar-light bg-light fixed-top " + classes.navBoxShadow
-			}
-		>
+		<nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top nav-box-shadow">
 			<div className="container-fluid col-md-7 col-12">
-				<a className="navbar-brand" href="#">
+				<a className="navbar-brand me-4" href="#">
 					<img src="/images/brand.png" height={40} alt="logo" />
 				</a>
 				<button
@@ -26,11 +21,13 @@ const Navbar = ({ handleSubmit, handleSearch }) => {
 				</button>
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
-						<li className="nav-item me-2">
-							<button>Heroes</button>
+						<li className="nav-item me-3">
+							<span className="text-uppercase" onClick={() => handleCategory()}>
+								Heroes
+							</span>
 						</li>
 						<li className="nav-item">
-							<button>Villains</button>
+							<span className="text-uppercase">Villains</span>
 						</li>
 					</ul>
 					{/* ==============search box component============== */}
