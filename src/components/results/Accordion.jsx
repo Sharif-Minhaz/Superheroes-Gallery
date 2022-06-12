@@ -60,6 +60,7 @@ const Accordion = ({
 										className="text-decoration-none"
 										href={searchQuery}
 										target="_blank"
+										rel="noreferrer"
 									>
 										{" "}
 										visit

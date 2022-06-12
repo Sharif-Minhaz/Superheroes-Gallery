@@ -38,22 +38,22 @@ export default class Character {
 	_getUrl() {
 		let baseUrl = process.env.REACT_APP_BASE_URL;
 		if (this._searchTerm) {
-			if(this._category === "heroes") {
-				return baseUrl + `?${this._category.slice(0, -2)}=${this._searchTerm}`;
-			} else if(this._category === "villains") {
-				return baseUrl + `?${this._category.slice(0, -1)}=${this._searchTerm}`;
-			}
+			return baseUrl + `?hero=${this._searchTerm}`;
 		}
 		return baseUrl + `${this._category}`;
 	}
 
-	changeCategory(category) {
+	changeCategory = (category) => {
 		this._category = category;
 		return this.getInfo();
-	} 
+	};
 
 	search = (term) => {
 		this._searchTerm = term;
 		return this.getInfo();
+	};
+
+	setSearchTerm = (term) => {
+		this._searchTerm = term;
 	};
 }

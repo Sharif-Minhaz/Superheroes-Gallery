@@ -32,7 +32,7 @@ const AppearanceTable = ({ appearance }) => {
 					<th>Weight</th>
 					<td>
 						{!appearance.weight.includes("- lb")
-							? appearance.weight[0] + " ft, " + appearance.weight[1]
+							? appearance.weight[0] + ", " + appearance.weight[1]
 							: "Unknown"}
 					</td>
 				</tr>

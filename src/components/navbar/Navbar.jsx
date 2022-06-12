@@ -2,13 +2,14 @@ import React from "react";
 import SearchBox from "./SearchBox";
 import { charCategory } from "../../characters";
 
-const Navbar = ({ handleSubmit, handleSearch, handleCategory }) => {
+const Navbar = React.forwardRef((props, ref) => {
 	return (
-		<nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top nav-box-shadow">
+		<nav
+			ref={ref}
+			className="navbar navbar-expand-lg navbar-light bg-light sticky-top nav-box-shadow"
+		>
 			<div className="container-fluid col-md-7 col-12">
-				<a className="navbar-brand me-4" href="#">
-					<img src="/images/brand.png" height={40} alt="logo" />
-				</a>
+				<img src="/images/brand.png" height={40} alt="logo" className="me-4" />
 				<button
 					className="navbar-toggler"
 					type="button"
@@ -24,27 +25,36 @@ const Navbar = ({ handleSubmit, handleSearch, handleCategory }) => {
 					<ul className="navbar-nav me-auto mb-2 mb-lg-0 category-list">
 						<li className="nav-item me-3">
 							<span
-								className="text-uppercase"
-								onClick={() => handleCategory(charCategory.heroes)}
+								className={
+									props.category === "heroes"
+										? "text-uppercase active"
+										: "text-uppercase"
+								}
+								onClick={() => props.handleCategory(charCategory.heroes)}
 							>
 								Heroes
 							</span>
 						</li>
 						<li className="nav-item">
 							<span
-								className="text-uppercase"
-								onClick={() => handleCategory(charCategory.villains)}
+								className={
+									props.category === "villains"
+										? "text-uppercase active"
+										: "text-uppercase"
+								}
+								onClick={() => props.handleCategory(charCategory.villains)}
 							>
 								Villains
 							</span>
 						</li>
 					</ul>
-					{/* ==============search box component============== */}
-					<SearchBox handleSubmit={handleSubmit} handleSearch={handleSearch} />
+					<SearchBox
+						handleSubmit={props.handleSubmit}
+						handleSearch={props.handleSearch}
+					/>
 				</div>
 			</div>
 		</nav>
 	);
-};
-
+});
 export default Navbar;

@@ -8,17 +8,20 @@ const Results = ({ data }) => {
 		);
 	} else if (typeof data === "object" && !Array.isArray(data)) {
 		return (
-			<Accordion
-				id={data.id}
-				name={data.name}
-				titleImg={data.images.sm}
-				image={data.images.sm}
-				appearance={data.appearance}
-				biography={data.biography}
-				connections={data.connections}
-				powerStats={data.powerstats}
-				work={data.work}
-			/>
+			<>
+				<p className="lead text-center mb-4">Search result for "{data.name}"</p>
+				<Accordion
+					id={data.id}
+					name={data.name}
+					titleImg={data.images.sm}
+					image={data.images.sm}
+					appearance={data.appearance}
+					biography={data.biography}
+					connections={data.connections}
+					powerStats={data.powerstats}
+					work={data.work}
+				/>
+			</>
 		);
 	}
 	return (
