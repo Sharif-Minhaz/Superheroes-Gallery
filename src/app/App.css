@@ -23,6 +23,17 @@
     font-size: 15px;
 }
 
+.category-list li span {
+	display: inline-block;
+	border: 1px solid transparent;
+	transition: all 0.3s;
+}
+
+.category-list li span:hover {
+	cursor: pointer;
+	color: cyan;
+}
+
 @media (max-width: 767px){
 	.superhero-card {
 		width: 190px;

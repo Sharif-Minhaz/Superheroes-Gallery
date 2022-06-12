@@ -1,5 +1,6 @@
 import React from "react";
 import SearchBox from "./SearchBox";
+import { charCategory } from "../../characters";
 
 const Navbar = ({ handleSubmit, handleSearch, handleCategory }) => {
 	return (
@@ -20,14 +21,22 @@ const Navbar = ({ handleSubmit, handleSearch, handleCategory }) => {
 					<span className="navbar-toggler-icon"></span>
 				</button>
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
+					<ul className="navbar-nav me-auto mb-2 mb-lg-0 category-list">
 						<li className="nav-item me-3">
-							<span className="text-uppercase" onClick={() => handleCategory()}>
+							<span
+								className="text-uppercase"
+								onClick={() => handleCategory(charCategory.heroes)}
+							>
 								Heroes
 							</span>
 						</li>
 						<li className="nav-item">
-							<span className="text-uppercase">Villains</span>
+							<span
+								className="text-uppercase"
+								onClick={() => handleCategory(charCategory.villains)}
+							>
+								Villains
+							</span>
 						</li>
 					</ul>
 					{/* ==============search box component============== */}
